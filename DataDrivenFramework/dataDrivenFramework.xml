@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Data_Driven_Framework_Test_Suite" preserve-order="true" parallel="false" thread-count="1" verbose="2">
+
+	<!-- test groups -->
+	<groups>
+		<run>
+			<include name="BaseTest" />
+			<exclude name="" />
+		</run>
+	</groups>
+	
+	<!-- test listeners -->
+	<listeners>
+		<listener class-name="utilities.TestNG_ConsoleRunner" />
+		<listener class-name="utilities.ExtentTestNGIReporterListener" />
+	</listeners>
+	
+	<!-- suite parameters -->
+	<parameter name="environment" value="local" />
+	
+	<!-- tests -->
+	<test name="BaseTest">
+		<!-- test parameters -->
+		<parameter name="browser" value="chrome" />
+		<parameter name="platform" value="Windows" />
+		<!-- <parameter name="includePattern" value="" /> 
+		<parameter name="excludePattern" value="" /> -->
+		
+		<classes>
+		<class name="tests.BaseTest" />
+		</classes>
+	</test>
+</suite>
